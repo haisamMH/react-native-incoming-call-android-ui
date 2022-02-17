@@ -1,0 +1,62 @@
+{
+  "_from": "react-native-incoming-call",
+  "_id": "react-native-incoming-call@2.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-G1HyoQcXwqQQQPdenOyJkcN4D9jbHosRKaQPfdG/6oIrkHThy3iWywIJHCCyqKvJwhF0Qz1WhEMFckzH1kvGhw==",
+  "_location": "/react-native-incoming-call",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-incoming-call",
+    "name": "react-native-incoming-call",
+    "escapedName": "react-native-incoming-call",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-incoming-call/-/react-native-incoming-call-2.0.3.tgz",
+  "_shasum": "c786a2868498477b8e8027729cb72a9813c0d2a2",
+  "_spec": "react-native-incoming-call",
+  "_where": "/Users/hysham/Documents/Projects/Vinix/VinixApp/vinix-mobile-react copy",
+  "author": {
+    "name": "Quoc Khanh",
+    "email": "bkdev98@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bkdev98/react-native-incoming-call/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "React Native module to display incoming call activity. Only for Android since iOS we have VoIP.",
+  "devDependencies": {
+    "react": "^16.8.3",
+    "react-native": "^0.59.10"
+  },
+  "homepage": "https://github.com/bkdev98/react-native-incoming-call#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "main": "index.js",
+  "name": "react-native-incoming-call",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.59.0-rc.0 <1.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkdev98/react-native-incoming-call.git",
+    "baseUrl": "https://github.com/bkdev98/react-native-incoming-call"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "title": "React Native Incoming Call",
+  "version": "2.0.3"
+}
