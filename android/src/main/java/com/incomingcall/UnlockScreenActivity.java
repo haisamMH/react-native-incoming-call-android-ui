@@ -92,7 +92,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
         // v.vibrate(pattern, 0);
-        player.start();
+        // player.start();
 
         AnimateImage acceptCallBtn = findViewById(R.id.ivAcceptCall);
         acceptCallBtn.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
             public void onClick(View view) {
                 try {
                     // v.cancel();
-                    player.stop();
+                    // player.stop();
                     acceptDialing();
                 } catch (Exception e) {
                     WritableMap params = Arguments.createMap();
@@ -116,7 +116,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
             @Override
             public void onClick(View view) {
                 // v.cancel();
-                player.stop();
+                // player.stop();
                 dismissDialing();
             }
         });
@@ -131,7 +131,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
     public static void dismissIncoming() {
         try{
             // v.cancel();
-            player.stop();
+            // player.stop();
             fa.finish();
         }catch(Exception e){
             // WritableMap params = Arguments.createMap();
