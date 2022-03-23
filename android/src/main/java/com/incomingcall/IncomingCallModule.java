@@ -57,15 +57,15 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
             i.putExtras(bundle);
             reactContext.startActivity(i);
 
-            if (timeout > 0) {
-                new Timer().schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        // this code will be executed after timeout seconds
-                        // UnlockScreenActivity.dismissIncoming();
-                    }
-                }, timeout);
-            }
+            // if (timeout > 0) {
+            //     new Timer().schedule(new TimerTask() {
+            //         @Override
+            //         public void run() {
+            //             // this code will be executed after timeout seconds
+            //             // UnlockScreenActivity.dismissIncoming();
+            //         }
+            //     }, timeout);
+            // }
         }
     }
 
