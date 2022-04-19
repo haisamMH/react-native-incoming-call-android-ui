@@ -32,9 +32,10 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
 
     private static final String TAG = "MessagingService";
     private TextView tvName;
+    public static String name = "";
     private TextView tvInfo;
     private ImageView ivAvatar;
-    private String uuid = "";
+    private static String uuid = "";
     static boolean active = false;
     private static Vibrator v = (Vibrator) IncomingCallModule.reactContext.getSystemService(Context.VIBRATOR_SERVICE);
     private long[] pattern = { 0, 1000, 800 };
@@ -54,6 +55,11 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         active = false;
     }
 
+    public static void setParams(String nm, String id) {
+        name = nm;
+        uuid = id;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +71,15 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         tvName = findViewById(R.id.tvName);
         tvInfo = findViewById(R.id.tvInfo);
         ivAvatar = findViewById(R.id.ivAvatar);
+
+        if (name != "") {
+            tvName.setText(name);
+        }
+
+        tvInfo.setText("Vinix");
+
+        Picasso.get().load("http://www.gravatar.com/avatar/?d=identicon").transform(new CircleTransform())
+                .into(ivAvatar);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
