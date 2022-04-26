@@ -76,7 +76,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
             tvName.setText(name);
         }
 
-        tvInfo.setText("Vinix");
+        tvInfo.setText("CoolTalk");
 
         Picasso.get().load("http://www.gravatar.com/avatar/?d=identicon").transform(new CircleTransform())
                 .into(ivAvatar);
