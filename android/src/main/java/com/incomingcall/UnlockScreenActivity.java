@@ -12,6 +12,8 @@ import android.os.Vibrator;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.provider.Settings;
+
+import java.io.File;
 import java.util.List;
 import android.app.Activity;
 
@@ -42,6 +44,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
     private static MediaPlayer player = MediaPlayer.create(IncomingCallModule.reactContext,
             Settings.System.DEFAULT_RINGTONE_URI);
     private static Activity fa;
+//    File f = new File("");
 
     @Override
     public void onStart() {
@@ -78,8 +81,8 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
 
         tvInfo.setText("Vinix");
 
-        Picasso.get().load("http://www.gravatar.com/avatar/?d=identicon").transform(new CircleTransform())
-                .into(ivAvatar);
+        // Picasso.get().load("http://www.gravatar.com/avatar/?d=identicon").transform(new CircleTransform())
+        //         .into(ivAvatar);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -94,12 +97,12 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
                 String info = bundle.getString("info");
                 tvInfo.setText(info);
             }
-            if (bundle.containsKey("avatar")) {
-                String avatar = bundle.getString("avatar");
-                if (avatar != null) {
-                    Picasso.get().load(avatar).transform(new CircleTransform()).into(ivAvatar);
-                }
-            }
+            // if (bundle.containsKey("avatar")) {
+            //     String avatar = bundle.getString("avatar");
+            //     if (avatar != null) {
+            //         Picasso.get().load(avatar).transform(new CircleTransform()).into(ivAvatar);
+            //     }
+            // }
         }
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
