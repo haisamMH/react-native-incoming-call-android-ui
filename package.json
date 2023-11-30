@@ -34,7 +34,7 @@
   "deprecated": false,
   "description": "React Native module to display incoming call activity. Only for Android since iOS we have VoIP.",
   "devDependencies": {
-    "react": "^16.8.3",
+    "react": "^18.2.0",
     "react-native": "^0.59.10"
   },
   "homepage": "https://github.com/bkdev98/react-native-incoming-call#readme",
@@ -46,7 +46,7 @@
   "main": "index.js",
   "name": "react-native-incoming-call",
   "peerDependencies": {
-    "react": "^16.8.1",
+    "react": "^18.2.0",
     "react-native": ">=0.59.0-rc.0 <1.0.x"
   },
   "repository": {
