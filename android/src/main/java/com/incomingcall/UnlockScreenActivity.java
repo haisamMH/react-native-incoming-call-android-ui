@@ -34,10 +34,12 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
 
     private static final String TAG = "MessagingService";
     private TextView tvName;
+    private TextView companyName;
     public static String name = "";
     private TextView tvInfo;
     private ImageView ivAvatar;
     private static String uuid = "";
+    private static String company = "";
     static boolean active = false;
     private static Vibrator v = (Vibrator) IncomingCallModule.reactContext.getSystemService(Context.VIBRATOR_SERVICE);
     private long[] pattern = { 0, 1000, 800 };
@@ -58,9 +60,10 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         active = false;
     }
 
-    public static void setParams(String nm, String id) {
+    public static void setParams(String nm, String id, String cmp) {
         name = nm;
         uuid = id;
+        company = cmp;
     }
 
     @Override
@@ -74,9 +77,14 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         tvName = findViewById(R.id.tvName);
         tvInfo = findViewById(R.id.tvInfo);
         ivAvatar = findViewById(R.id.ivAvatar);
+        companyName = findViewById(R.id.companyName);
 
         if (name != "") {
             tvName.setText(name);
+        }
+
+        if (company != "") {
+            companyName.setText(company);
         }
 
         tvInfo.setText("");

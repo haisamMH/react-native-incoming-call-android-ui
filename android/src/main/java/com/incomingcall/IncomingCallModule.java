@@ -81,8 +81,8 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setParams(String name, String id) {
-        UnlockScreenActivity.setParams(name, id);
+    public void setParams(String name, String id, String cmp) {
+        UnlockScreenActivity.setParams(name, id, cmp);
     }
 
     private Context getAppContext() {
