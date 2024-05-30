@@ -39,6 +39,8 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
     private TextView tvInfo;
     private ImageView ivAvatar;
     private static String uuid = "";
+
+    private static String avatar = "";
     private static String company = "";
     static boolean active = false;
     private static Vibrator v = (Vibrator) IncomingCallModule.reactContext.getSystemService(Context.VIBRATOR_SERVICE);
@@ -60,10 +62,13 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         active = false;
     }
 
-    public static void setParams(String nm, String id, String cmp) {
+    public static void setParams(String nm, String id, String cmp, String avatarUrl) {
         name = nm;
         uuid = id;
         company = cmp;
+        if(avatarUrl != ""){
+            avatar = avatarUrl;
+        }
     }
 
     @Override
@@ -89,8 +94,11 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
 
         tvInfo.setText("");
 
-        // Picasso.get().load("http://www.gravatar.com/avatar/?d=identicon").transform(new CircleTransform())
-        //         .into(ivAvatar);
+        if(avatar != ""){
+             Picasso.get().load(avatar).transform(new CircleTransform())
+                     .into(ivAvatar);
+        }
+
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -105,12 +113,12 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
                 String info = bundle.getString("info");
                 tvInfo.setText(info);
             }
-            // if (bundle.containsKey("avatar")) {
-            //     String avatar = bundle.getString("avatar");
-            //     if (avatar != null) {
-            //         Picasso.get().load(avatar).transform(new CircleTransform()).into(ivAvatar);
-            //     }
-            // }
+//             if (bundle.containsKey("avatar")) {
+//                 String avatar = bundle.getString("avatar");
+//                 if (avatar != null) {
+//                     Picasso.get().load(avatar).transform(new CircleTransform()).into(ivAvatar);
+//                 }
+//             }
         }
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON

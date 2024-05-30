@@ -50,9 +50,9 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
             Intent i = new Intent(reactContext, UnlockScreenActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                     | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            i.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED +
-                    WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD +
-                    WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET +
+                    Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT +
+                    Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
 
             i.putExtras(bundle);
             reactContext.startActivity(i);
@@ -81,8 +81,8 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setParams(String name, String id, String cmp) {
-        UnlockScreenActivity.setParams(name, id, cmp);
+    public void setParams(String name, String id, String cmp, String avatar) {
+        UnlockScreenActivity.setParams(name, id, cmp, avatar);
     }
 
     private Context getAppContext() {
@@ -114,10 +114,10 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
 
         if (!isOpened) {
             focusIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                    WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
-                    WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
-                    WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
-                    WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+                    Intent.FLAG_GRANT_PREFIX_URI_PERMISSION |
+                    Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
+                    Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT |
+                    Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
 
             final WritableMap response = new WritableNativeMap();
             response.putBoolean("isHeadless", true);

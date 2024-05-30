@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/incoming_voice_call">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/ubunturegular"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/ubunturegular"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:text="Incoming Voice Call"
             android:textSize="16sp" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/ubunturegular"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <RelativeLayout
@@ -48,19 +48,11 @@
             android:layout_height="265dp">
 
             <ImageView
-                android:id="@+id/ivRing1"
-                android:layout_width="265dp"
-                android:layout_height="265dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_ring" />
-
-            <ImageView
                 android:id="@+id/ivAvatar"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="167dp"
+                android:layout_height="167dp"
                 android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:scaleType="fitXY" />
 
@@ -73,7 +65,7 @@
             android:layout_marginTop="10dp"
             android:textSize="14sp"
             android:fontFamily="@font/ubunturegular"
-            android:textColor="#ADADAD"
+            android:textColor="#4C4C4C"
         />
 
     </LinearLayout>
@@ -96,13 +88,13 @@
             android:layout_marginBottom="60dp"
             android:layout_marginEnd="140dp"
         >
+
             <com.incomingcall.AnimateImage
                 android:id="@+id/ivDeclineCall"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_decline_call"
-            />
+                android:src="@drawable/ic_decline_call" />
 
         </LinearLayout>
 
@@ -114,13 +106,13 @@
             android:layout_centerVertical="true"
             android:layout_marginBottom="60dp"
         >
+
             <com.incomingcall.AnimateImage
                 android:id="@+id/ivAcceptCall"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_accept_call"
-            />
+                android:src="@drawable/ic_accept_call" />
 
         </LinearLayout>
 
