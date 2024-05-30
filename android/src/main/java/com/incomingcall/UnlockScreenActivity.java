@@ -2,6 +2,7 @@ package com.incomingcall;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -94,9 +95,12 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
 
         tvInfo.setText("");
 
-        if(avatar != ""){
-             Picasso.get().load(avatar).transform(new CircleTransform())
-                     .into(ivAvatar);
+        if(!TextUtils.isEmpty(avatar)){
+            Picasso.get().load(avatar).transform(new CircleTransform())
+                    .into(ivAvatar);
+        } else {
+            // Set a default image or make ImageView invisible
+            ivAvatar.setImageResource(R.drawable.avatar); // assuming 'default_avatar' is a default drawable resource
         }
 
 
